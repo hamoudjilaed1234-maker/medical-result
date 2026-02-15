@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المجلس الطبي - استعلام</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 100%; max-width: 380px; text-align: center; border-top: 8px solid #28a745; }
+        .logo { width: 80px; margin-bottom: 15px; }
+        h2 { color: #1a5a30; margin: 0; font-size: 22px; }
+        h3 { color: #28a745; margin: 10px 0 25px 0; font-size: 18px; font-weight: normal; }
+        label { display: block; text-align: right; margin-bottom: 8px; color: #555; font-size: 14px; }
+        input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; text-align: center; }
+        button { width: 100%; padding: 12px; background-color: #28a745; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #218838; }
+        #result { display: none; margin-top: 25px; padding: 15px; border-radius: 8px; background: #f8fff9; border: 1px solid #d4edda; text-align: right; }
+        .res-item { margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+        .status { color: #28a745; font-weight: bold; font-size: 20px; text-align: center; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://portal.ysmc.gov.ye/assets/images/logo.png" class="logo">
+    <h2>المجلس الطبي</h2>
+    <h3>نتيجة امتحان الكفاءة</h3>
+    
+    <label>رقم الهوية الوطنية:</label>
+    <input type="text" id="idNum" placeholder="أدخل رقم هويتك هنا">
+    <button onclick="check()">استعلام</button>
+
+    <div id="result">
+        <div class="res-item"><b>الاسم:</b> حمود حمود علي علي جليد</div>
+        <div class="res-item"><b>المؤهل:</b> بكالوريوس طب وجراحة</div>
+        <div class="res-item"><b>الرقم السري:</b> 10038588 - 46</div>
+        <div class="status">النتيجة: موفق ✅</div>
+    </div>
+</div>
+
+<script>
+    function check() {
+        var val = document.getElementById("idNum").value;
+        // ضع رقمك الوطني الحقيقي هنا بدلاً من 123456
+        if(val === "123456") { 
+            document.getElementById("result").style.display = "block";
+        } else {
+            alert("رقم الهوية غير صحيح، يرجى التأكد والمحاولة مرة أخرى.");
+        }
+    }
+</script>
+
+</body>
+</html>
